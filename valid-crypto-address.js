@@ -20,7 +20,20 @@
         root.ValidCryptoAddress = factory();
   }
 }(this, function() {
-    var ValidCryptoAddress;
+    var ValidCryptoAddress,
+        sjcl = require('sjcl'),
+        decode = require('bs58').decode,
+        allow = require('switch-factory').allow,
+        convert = require('bit-array-tools').convert,
+        filter = allow('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'); //base58
     
+    ValidCryptoAddress = function(a) {
+        if(filter(a) === a) {
+            return convert(decode(a));
+        } else {
+            return false;
+        }
+    };
+
     return ValidCryptoAddress;
 }));

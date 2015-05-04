@@ -7,4 +7,5 @@
 
 var ValidCryptoAddress = require('./valid-crypto-address.js');
 
-new ValidCryptoAddress();
+console.log(ValidCryptoAddress('1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i'));
+console.log(ValidCryptoAddress('38ccq12hPFoiSksxUdr6SQ5VosyjY7s9AU'));

@@ -39,6 +39,9 @@
     "valid-crypto-address": "bin/valid-crypto-address"
   },
   "dependencies": {
+    "bit-array-tools": "0.0.1",
+    "bs58": "^2.0.1",
+    "sjcl": "^1.0.2",
     "switch-factory": "0.0.6"
   }
 }
