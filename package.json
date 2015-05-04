@@ -1,0 +1,44 @@
+{
+  "name": "valid-crypto-address",
+  "description": "Check for a valid crypto currency address",
+  "homepage": "https://github.com/daxxog/valid-crypto-address",
+  "main": "valid-crypto-address.min.js",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.10.33"
+  },
+  "maintainers": [
+    {
+      "name": "David Volm",
+      "email": "david@volminator.com",
+      "web": "http://daxxog.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daxxog/valid-crypto-address.git"
+  },
+  "devDependencies": {
+    "bitfactory": "*",
+    "stoptime": "*",
+    "uglify-js": "*",
+    "vows": "*"
+  },
+  "scripts": {
+    "build": "node make.js",
+    "test": "vows test/*",
+    "start": "node cli.js",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "cli.min.js",
+    "valid-crypto-address.min.js",
+    "bin/valid-crypto-address"
+  ],
+  "bin": {
+    "valid-crypto-address": "bin/valid-crypto-address"
+  },
+  "dependencies": {
+    "switch-factory": "0.0.6"
+  }
+}
