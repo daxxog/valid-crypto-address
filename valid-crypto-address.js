@@ -28,8 +28,24 @@
         filter = allow('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'); //base58
     
     ValidCryptoAddress = function(a) {
+        var bytes, data, tail, checksum;
+
         if(filter(a) === a) {
-            return convert(decode(a));
+            bytes = decode(a);
+
+            if(bytes.length === 25) {
+                data = convert(bytes.splice(0, 21));
+                tail = bytes;
+                checksum = convert(sjcl.hash.sha256.hash(sjcl.hash.sha256.hash(data)), 'utf8');
+
+                return tail.map(function(v, i, a) {
+                    return v === checksum[i];
+                }).reduce(function(p, c) {
+                    return (p === true) && (c === true);
+                });
+            } else {
+                return false;
+            }
         } else {
             return false;
         }

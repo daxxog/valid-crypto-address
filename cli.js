@@ -5,7 +5,6 @@
  * http://www.apache.org/licenses/LICENSE-2.0.html  
  */
 
-var ValidCryptoAddress = require('./valid-crypto-address.js');
+var ValidCryptoAddress = require('./valid-crypto-address.min.js');
 
-console.log(ValidCryptoAddress('1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i'));
-console.log(ValidCryptoAddress('38ccq12hPFoiSksxUdr6SQ5VosyjY7s9AU'));
+console.log(ValidCryptoAddress(process.argv[2]));
